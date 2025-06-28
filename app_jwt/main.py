@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
 from database import delete_tables, create_tabels
-from token_jwt.router import router as token_router
+from token_jwt.routers.token import router as token_router
 
 # Фукция для логгирования (удобно во время тестов, что база очищается при каждом тесте)
 @asynccontextmanager

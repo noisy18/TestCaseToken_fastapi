@@ -1,8 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 # Модель для запроса токена
 class TokenRequest(BaseModel):
-    email: str
+    email: EmailStr
 
 # Модель ответа с токеном
 class TokenResponse(BaseModel):
