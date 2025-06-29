@@ -12,12 +12,14 @@ new_session = async_sessionmaker(engine, expire_on_commit=False)
 class Model(DeclarativeBase):
     pass
 
-class TaskOrm(Model):
-    __tablename__ = "tokens"
+class User(Model):
+    __tablename__ = "users"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str]
-    description: Mapped[Optional[str]]
+    uuid: str
+    username: Mapped[str]
+    email: Mapped[str]
+    password: Mapped[str]
 
 # Функция создания таблиц
 async def create_tabels():
